@@ -11,7 +11,7 @@ class DataHorario
     public:
         DataHorario(int dia, int mes, int ano, int hora, int minuto, int segundo); //Construtor da classe
         ~DataHorario(); // Destrutor da classe
-        int compara(DataHorario&);
+        int compare(DataHorario&);
         int getDia();
         void setDia(int dia);
         int getMes();

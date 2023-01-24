@@ -9,7 +9,31 @@ DataHorario::DataHorario(int dia, int mes, int ano, int hora, int minuto, int se
 DataHorario::~DataHorario(){}; 
 
 /*Método de comparação das datas*/
-// int DataHorario::compara(DataHorario&) {}
+int DataHorario::compare(DataHorario& d2) {
+    //Se os anos forem diferentes e o ano da segunda data for maior o retorno será como pedido, negativo
+    //Caso sejam iguais, serão verificados os meses, e caso o do segundo objeto seja maior, será retorno negativo
+    //Mesma logica aplicada aos demais atributos
+    if(d2.ano != this->ano) return this->ano - d2.ano;
+    else
+    {
+        if(d2.mes != this->mes) return this->mes - d2.mes;
+        else
+        {
+            if(d2.dia != this->dia) return this->dia - d2.dia;
+            else 
+            {
+                if(d2.hora != this->hora) return this->hora - d2.hora;
+                else 
+                {
+                    if(d2.minuto != this->minuto) return this->minuto - d2.minuto;
+                    else return this->segundo - d2.segundo;
+                }
+            }
+        }
+    }
+
+    
+}
 
 
 //Métodos get e set para os atributos da classe

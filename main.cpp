@@ -4,71 +4,72 @@
 #include "Pessoa.h"
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include <sstream>
 
 using namespace std;
 
-// void imprimeDatas(DataHorario& d1, DataHorario& d2) {
+void imprimeDatas(DataHorario& d1, DataHorario& d2) {
 
-//     stringstream ss1;
-//     ss1 << setfill('0') << setw(2) << d1.getDia();
-//     ss1 << "/";
-//     ss1 << setfill('0') << setw(2) << d1.getMes();
-//     ss1 << "/";
-//     ss1 << setfill('0') << setw(4) << d1.getAno();
-//     ss1 << " ";
-//     ss1 << setfill('0') << setw(2) << d1.getHora();
-//     ss1 << ":";
-//     ss1 << setfill('0') << setw(2) << d1.getMinuto();
-//     ss1 << ":";
-//     ss1 << setfill('0') << setw(2) << d1.getSegundo();
+    stringstream ss1;
+    ss1 << setfill('0') << setw(2) << d1.getDia();
+    ss1 << "/";
+    ss1 << setfill('0') << setw(2) << d1.getMes();
+    ss1 << "/";
+    ss1 << setfill('0') << setw(4) << d1.getAno();
+    ss1 << " ";
+    ss1 << setfill('0') << setw(2) << d1.getHora();
+    ss1 << ":";
+    ss1 << setfill('0') << setw(2) << d1.getMinuto();
+    ss1 << ":";
+    ss1 << setfill('0') << setw(2) << d1.getSegundo();
 
-//     stringstream ss2;
-//     ss2 << setfill('0') << setw(2) << d2.getDia();
-//     ss2 << "/";
-//     ss2 << setfill('0') << setw(2) << d2.getMes();
-//     ss2 << "/";
-//     ss2 << setfill('0') << setw(4) << d2.getAno();
-//     ss2 << " ";
-//     ss2 << setfill('0') << setw(2) << d2.getHora();
-//     ss2 << ":";
-//     ss2 << setfill('0') << setw(2) << d2.getMinuto();
-//     ss2 << ":";
-//     ss2 << setfill('0') << setw(2) << d2.getSegundo();
+    stringstream ss2;
+    ss2 << setfill('0') << setw(2) << d2.getDia();
+    ss2 << "/";
+    ss2 << setfill('0') << setw(2) << d2.getMes();
+    ss2 << "/";
+    ss2 << setfill('0') << setw(4) << d2.getAno();
+    ss2 << " ";
+    ss2 << setfill('0') << setw(2) << d2.getHora();
+    ss2 << ":";
+    ss2 << setfill('0') << setw(2) << d2.getMinuto();
+    ss2 << ":";
+    ss2 << setfill('0') << setw(2) << d2.getSegundo();
 
-//     int cmp = d1.compare(d2);
-//     if (cmp > 0) {
-//         cout << ss1.str() << " > " << ss2.str() << endl;
-//     } else if (cmp < 0) {
-//         cout << ss1.str() << " < " << ss2.str() << endl;
-//     } else {
-//         cout << ss1.str() << " == " << ss2.str() << endl;
-//     }
-// }
+    int cmp = d1.compare(d2);
+    if (cmp > 0) {
+        cout << ss1.str() << " > " << ss2.str() << endl;
+    } else if (cmp < 0) {
+        cout << ss1.str() << " < " << ss2.str() << endl;
+    } else {
+        cout << ss1.str() << " == " << ss2.str() << endl;
+    }
+}
 
 int main() {
 
-    // cout << "=================== Ex 1 ===================" << endl;
+    cout << "=================== Ex 1 ===================" << endl;
 
-    // Pessoa p1("920.160.912-40", "Bianca Débora Sara da Rocha");
-    // Pessoa p2("522.924.726-60", "Mário Benício Rodrigues");
-    // p1.imprime();
-    // p2.imprime(); 
+    Pessoa p1("920.160.912-40", "Bianca Débora Sara da Rocha");
+    Pessoa p2("522.924.726-60", "Mário Benício Rodrigues");
+    p1.imprime();
+    p2.imprime(); 
     
-    // cout << "=================== Ex 2 ===================" << endl;
+    cout << "=================== Ex 2 ===================" << endl;
     
-    // Aluno aluno1("700.879.680-37", "Manuela Stefany Giovanna da Rosa", 13579, 7, 7, 7);
-    // Aluno aluno2("767.692.493-67", "Renato Enrico Melo", 24680, 8, 8, 0);
-    // Aluno aluno3("287.624.030-01", "Raquel Milena da Luz", 12345, 3, 4, 5);
+    Aluno aluno1("700.879.680-37", "Manuela Stefany Giovanna da Rosa", 13579, 7, 7, 7);
+    Aluno aluno2("767.692.493-67", "Renato Enrico Melo", 24680, 8, 8, 0);
+    Aluno aluno3("287.624.030-01", "Raquel Milena da Luz", 12345, 3, 4, 5);
 
-    // cout << "---------------------------------" << endl;
-    // aluno1.imprime();
+    cout << "---------------------------------" << endl;
+    aluno1.imprime();
     
-    // cout << "---------------------------------" << endl;
-    // aluno2.imprime();
+    cout << "---------------------------------" << endl;
+    aluno2.imprime();
     
-    // cout << "---------------------------------" << endl;
-    // aluno3.imprime();
+    cout << "---------------------------------" << endl;
+    aluno3.imprime();
     
     cout << "=================== Ex 3 ===================" << endl;
     
@@ -83,18 +84,18 @@ int main() {
     DataHorario data4(4, 2, 2022, 9, 0, 0);
     */
 
-    data1.imprime(false); //8 pm
-    data2.imprime(false); // 2 pm
+    data1.imprime(false); //10 am
+    data2.imprime(false); // 10 am
 
     /*testes
     data3.imprime(true); // 21
     data4.imprime(true); // 9
     */
 
-    // imprimeDatas(data1, data2);
-    // imprimeDatas(data2, data1);
-    // imprimeDatas(data1, data1);
-    // imprimeDatas(data2, data2);
+    imprimeDatas(data1, data2);
+    imprimeDatas(data2, data1);
+    imprimeDatas(data1, data1);
+    imprimeDatas(data2, data2);
 
     cout << "---------------------------------" << endl;
     
