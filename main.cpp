@@ -48,48 +48,61 @@ using namespace std;
 
 int main() {
 
-    cout << "=================== Ex 1 ===================" << endl;
+    // cout << "=================== Ex 1 ===================" << endl;
 
-    Pessoa p1("920.160.912-40", "Bianca Débora Sara da Rocha");
-    Pessoa p2("522.924.726-60", "Mário Benício Rodrigues");
-    p1.imprime();
-    p2.imprime(); 
+    // Pessoa p1("920.160.912-40", "Bianca Débora Sara da Rocha");
+    // Pessoa p2("522.924.726-60", "Mário Benício Rodrigues");
+    // p1.imprime();
+    // p2.imprime(); 
     
     // cout << "=================== Ex 2 ===================" << endl;
     
-    Aluno aluno1("700.879.680-37", "Manuela Stefany Giovanna da Rosa", 13579, 7, 7, 7);
-    Aluno aluno2("767.692.493-67", "Renato Enrico Melo", 24680, 8, 8, 0);
-    Aluno aluno3("287.624.030-01", "Raquel Milena da Luz", 12345, 3, 4, 5);
+    // Aluno aluno1("700.879.680-37", "Manuela Stefany Giovanna da Rosa", 13579, 7, 7, 7);
+    // Aluno aluno2("767.692.493-67", "Renato Enrico Melo", 24680, 8, 8, 0);
+    // Aluno aluno3("287.624.030-01", "Raquel Milena da Luz", 12345, 3, 4, 5);
 
-    cout << "---------------------------------" << endl;
-    aluno1.imprime();
+    // cout << "---------------------------------" << endl;
+    // aluno1.imprime();
     
-    cout << "---------------------------------" << endl;
-    aluno2.imprime();
+    // cout << "---------------------------------" << endl;
+    // aluno2.imprime();
     
-    cout << "---------------------------------" << endl;
-    aluno3.imprime();
+    // cout << "---------------------------------" << endl;
+    // aluno3.imprime();
     
-    // cout << "=================== Ex 3 ===================" << endl;
+    cout << "=================== Ex 3 ===================" << endl;
     
-    // DataHorario data1(1, 1, 2022, 10, 0, 0);
-    // DataHorario data2(2, 2, 2022, 10, 0, 0);
+    DataHorario data1(1, 1, 2022, 10, 0, 0);
+    DataHorario data2(2, 2, 2022, 10, 0, 0);
 
-    // data1.imprime(false);
-    // data2.imprime(false);
+
+    /*Casos de teste
+    DataHorario data1(1, 1, 2022, 8, 30, 0);
+    DataHorario data2(2, 2, 2022, 14, 0, 0);
+    DataHorario data3(4, 2, 2022, 21, 0, 0);
+    DataHorario data4(4, 2, 2022, 9, 0, 0);
+    */
+
+    data1.imprime(false); //8 pm
+    data2.imprime(false); // 2 pm
+
+    /*testes
+    data3.imprime(true); // 21
+    data4.imprime(true); // 9
+    */
 
     // imprimeDatas(data1, data2);
     // imprimeDatas(data2, data1);
     // imprimeDatas(data1, data1);
     // imprimeDatas(data2, data2);
 
-    // cout << "---------------------------------" << endl;
+    cout << "---------------------------------" << endl;
     
-    // for (int i = 1; i <= 12; i++) {
-    //     DataHorario* d = new DataHorario(1, i, 2022, 10, 0, 0);
-    //     d->imprimePorExtenso();
-    //     delete d;
-    // }
+    for (int i = 1; i <= 12; i++) {
+        DataHorario* d = new DataHorario(1, i, 2022, 10, 0, 0);
+        d->imprimePorExtenso();
+        delete d;
+    }
 
     // cout << "=================== Ex 4 ===================" << endl;
     
