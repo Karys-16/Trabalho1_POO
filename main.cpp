@@ -75,26 +75,10 @@ int main() {
     
     DataHorario data1(1, 1, 2022, 10, 0, 0);
     DataHorario data2(2, 2, 2022, 10, 0, 0);
-    // DataHorario data3(29, 2, 2024, 25, 0, 0);
-    // DataHorario data4(-4, 2, 2022, 12, 30, 0);
-    // DataHorario data5(4, 2, 2022, -10, 30, 0);
 
-
-
-    /*Casos de teste
-    DataHorario data1(1, 1, 2022, 8, 30, 0);
-    DataHorario data2(2, 2, 2022, 14, 0, 0);
-    */
 
     data1.imprime(false); //10 am
     data2.imprime(false); // 10 am
-    // data3.imprime(true); // --> inválido por ser uma hora maior que 23
-    // data4.imprime(false); // --> teste inválido por causa do dia negativo
-    // data5.imprime(true); // --> inválido pois a hora está negativa
-
-    /*testes
-    data4.imprime(true); // 9
-    */
 
     imprimeDatas(data1, data2);
     imprimeDatas(data2, data1);
@@ -139,4 +123,3 @@ int main() {
     voo.imprime();
     return 0;
 }
-

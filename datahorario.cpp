@@ -176,7 +176,7 @@ void DataHorario::imprime(bool padrao)
     //Variável para armazenar am/pm
     string p;
     //Se for verdadeiro ele imprime na versão 24horas
-    if(padrao)
+    if(!padrao)
         cout << dia << "/" << mes << "/" << ano << " " << hora << ":" << minuto << ":" << segundo << endl;
     //Senão, será no formato 12h com am/pm
     else
