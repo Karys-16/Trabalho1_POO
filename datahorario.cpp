@@ -3,7 +3,79 @@
 using namespace std;
 
 /*Construtor da classe*/
-DataHorario::DataHorario(int dia, int mes, int ano, int hora, int minuto, int segundo) : dia(dia), mes(mes), ano(ano), hora(hora), minuto(minuto), segundo(segundo){};
+DataHorario::DataHorario(int dia, int mes, int ano, int hora, int minuto, int segundo) : dia(dia), mes(mes), ano(ano), hora(hora), minuto(minuto), segundo(segundo)
+{
+    //verificando se o ano é bissexto ou não 
+    bool bisex;
+    //Variável booleana para casos em que algum elemento é falso
+    bool invalida = false;
+
+    bisex = (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0));
+
+    //Vê valores possíveis para cada mês do ano
+    if(dia > 0){
+    switch(mes)
+    {
+        case 01: 
+            if(dia > 31) invalida = true;
+        break;
+        case 2: 
+            //caso o ano não seja bissexto e tiver mais dias que 28 está inválida
+            if(!bisex && dia > 28) invalida = true;
+            //caso o ano seja bissexto e fevereiro tenha mais de 29 dias tambéms será inválida
+            else if(bisex && dia > 29) invalida = true;
+        break;
+        case 3: 
+            if(dia > 31)invalida = true;
+        break;
+        case 4: 
+            if(dia > 30)invalida = true;
+        break;
+        case 5: 
+            if(dia > 31)invalida = true;
+        break;
+        case 6: 
+            if(dia > 30)invalida = true;
+        break;
+        case 7: 
+            if(dia > 31)invalida = true;
+        break;
+        case 8: 
+            if(dia > 31)invalida = true;
+        break;
+        case 9: 
+            if(dia > 30)invalida = true;
+        break;
+        case 10: 
+            if(dia > 31)invalida = true;
+        break;
+        case 11: 
+            if(dia > 30)invalida = true;
+        break;
+        case 12: 
+            if(dia > 31)invalida = true;
+        break;
+        //se o usuário inserir qualquer data que não seja de 01 a 12, será enviado automaticamente para a invalidez
+        default: invalida = true;
+    }
+    }
+    else invalida = true;
+
+    //Horas negativas serão consideradas inválidas; 
+    //Não pode horas maiores que 24, minutos e segundos maiores que 60, ou seja, inválida será considerada como true
+    if(hora < 0 || hora > 23 || minuto < 0 || minuto > 60 || segundo < 0 || segundo > 60) invalida = true;
+
+    if(invalida)
+    {
+        this->dia = 01;
+        this->ano = 01;
+        this->mes = 0001; 
+        this->hora = 00;
+        this->minuto = 00;
+        this->segundo = 00;
+    }
+
+};
 
 /*Destrutor da classe*/
 DataHorario::~DataHorario(){}; 
@@ -109,12 +181,13 @@ void DataHorario::imprime(bool padrao)
     //Senão, será no formato 12h com am/pm
     else
     {
-        if(hora >= 12)
+        if(hora > 12)
         {   
             //se a hora fornecida for maior ou igual a 12 significa, no padrão 24h, que é após o meio-dia e por isso, deve ser usado pm nesse padrão
             hora = hora - 12;
             p = "PM";
         } 
+        else if(hora == 12) p = "PM";
         else p = "AM"; //Caso não, a hora fornecida será mantida e somente será acrescentado am ao final
 
         cout << dia << "/" << mes << "/" << ano << " " << hora << ":" << minuto << ":" << segundo << " " << p << endl;
@@ -171,4 +244,3 @@ void DataHorario::imprimePorExtenso()
     //Impressão por extenso e concatenada com a data e hora
     cout << dia << " de " << mext << " de " << ano << " - " << hora << " horas, " << minuto << " minutos e " << segundo << " segundos." << endl;
 }
-

@@ -75,20 +75,24 @@ int main() {
     
     DataHorario data1(1, 1, 2022, 10, 0, 0);
     DataHorario data2(2, 2, 2022, 10, 0, 0);
+    // DataHorario data3(29, 2, 2024, 25, 0, 0);
+    // DataHorario data4(-4, 2, 2022, 12, 30, 0);
+    // DataHorario data5(4, 2, 2022, -10, 30, 0);
+
 
 
     /*Casos de teste
     DataHorario data1(1, 1, 2022, 8, 30, 0);
     DataHorario data2(2, 2, 2022, 14, 0, 0);
-    DataHorario data3(4, 2, 2022, 21, 0, 0);
-    DataHorario data4(4, 2, 2022, 9, 0, 0);
     */
 
     data1.imprime(false); //10 am
     data2.imprime(false); // 10 am
+    // data3.imprime(true); // --> inválido por ser uma hora maior que 23
+    // data4.imprime(false); // --> teste inválido por causa do dia negativo
+    // data5.imprime(true); // --> inválido pois a hora está negativa
 
     /*testes
-    data3.imprime(true); // 21
     data4.imprime(true); // 9
     */
 
@@ -105,35 +109,34 @@ int main() {
         delete d;
     }
 
-    // cout << "=================== Ex 4 ===================" << endl;
+    cout << "=================== Ex 4 ===================" << endl;
+    Voo voo(1, data1);
     
-    // Voo voo(1, data1);
+    voo.imprime();
     
-    // voo.imprime();
-    
-    // int vaga;
+    int vaga;
 
-    // vaga = voo.proximoLivre();
-    // cout << "ocupa: " << (voo.ocupa(vaga, p1)? "true" : "false") << endl;
-    // cout << "ocupa: " << (voo.ocupa(vaga, p1)? "true" : "false") << endl;
-    // vaga = voo.proximoLivre();
-    // cout << "ocupa: " << (voo.ocupa(vaga, aluno1)? "true" : "false") << endl;
-    // cout << "ocupa: " << (voo.ocupa(vaga, aluno1)? "true" : "false") << endl;
-    // vaga = voo.proximoLivre();
-    // cout << "ocupa: " << (voo.ocupa(vaga, aluno3)? "true" : "false") << endl;
-    // cout << "ocupa: " << (voo.ocupa(vaga, aluno3)? "true" : "false") << endl;
+    vaga = voo.proximoLivre();
+    cout << "ocupa: " << (voo.ocupa(vaga, p1)? "true" : "false") << endl;
+    cout << "ocupa: " << (voo.ocupa(vaga, p1)? "true" : "false") << endl;
+    vaga = voo.proximoLivre();
+    cout << "ocupa: " << (voo.ocupa(vaga, aluno1)? "true" : "false") << endl;
+    cout << "ocupa: " << (voo.ocupa(vaga, aluno1)? "true" : "false") << endl;
+    vaga = voo.proximoLivre();
+    cout << "ocupa: " << (voo.ocupa(vaga, aluno3)? "true" : "false") << endl;
+    cout << "ocupa: " << (voo.ocupa(vaga, aluno3)? "true" : "false") << endl;
     
-    // voo.imprime();
+    voo.imprime();
     
-    // cout << "desocupa: " << (voo.desocupa(4)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(3)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(3)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(2)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(2)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(1)? "true" : "false") << endl;
-    // cout << "desocupa: " << (voo.desocupa(1)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(4)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(3)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(3)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(2)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(2)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(1)? "true" : "false") << endl;
+    cout << "desocupa: " << (voo.desocupa(1)? "true" : "false") << endl;
     
-    // voo.imprime();
-    // return 0;
+    voo.imprime();
+    return 0;
 }
 
